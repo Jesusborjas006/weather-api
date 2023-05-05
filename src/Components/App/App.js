@@ -18,7 +18,6 @@ function App() {
 
   return (
     <main className="main">
-      <h1 className="heading">Weather App</h1>
       <Weather weather={weather}/>
     </main>
   );
