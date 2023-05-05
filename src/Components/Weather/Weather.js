@@ -3,11 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDroplet, faWind } from "@fortawesome/free-solid-svg-icons";
 
 const Weather = (props) => {
-  console.log(props.weather);
+  const todaysDate = new Date();
+  let text = todaysDate.toLocaleDateString("default", {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+  });
+
   if (props.weather.weather) {
     return (
       <div className="weather-card">
         <div className="top-content">
+          <p className="date">{text}</p>
           <h3 className="city">{props.weather.name}</h3>
           <h2 className="temp">{props.weather.main.temp.toFixed()}°</h2>
           <p className="description">{props.weather.weather[0].description}</p>
