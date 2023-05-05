@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Weather from "../Weather/Weather";
 
 function App() {
   const [weather, setWeather] = useState({});
-  console.log(weather)
+  // console.log(weather);
 
   useEffect(() => {
     fetch(
@@ -11,13 +12,14 @@ function App() {
     )
       .then((response) => response.json())
       .then((data) => {
-        setWeather(data)
+        setWeather(data);
       });
   }, []);
 
   return (
     <main className="main">
       <h1 className="heading">Weather App</h1>
+      <Weather weather={weather}/>
     </main>
   );
 }
