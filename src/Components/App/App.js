@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Weather from "../Weather/Weather";
+import Form from "../Form/Form";
 
 function App() {
   const [weather, setWeather] = useState({});
-  // console.log(weather);
 
   useEffect(() => {
     fetch(
@@ -18,7 +18,8 @@ function App() {
 
   return (
     <main className="main">
-      <Weather weather={weather}/>
+      <Form />
+      <Weather weather={weather} />
     </main>
   );
 }
