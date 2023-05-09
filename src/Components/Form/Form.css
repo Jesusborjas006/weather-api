@@ -11,3 +11,17 @@
   border: none;
   width: 40%;
 }
+
+.form-btn {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.city-not-exist {
+  text-align: center;
+  margin-top: 15vh;
+  font-size: 1.8rem;
+}

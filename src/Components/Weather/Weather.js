@@ -10,7 +10,17 @@ const Weather = (props) => {
     day: "numeric",
   });
 
-  if (props.weather.weather) {
+  if (!props.weather) {
+    return (
+      <>
+        <h2 className="city-not-exist">City does not exist. Try another.</h2>
+      </>
+    );
+  }
+
+  if (!props.weather.weather) {
+    console.log("Something went wrong");
+  } else {
     return (
       <div className="weather-card">
         <div className="top-content">
@@ -37,8 +47,6 @@ const Weather = (props) => {
         </div>
       </div>
     );
-  } else {
-    console.log("No data found");
   }
 };
 
